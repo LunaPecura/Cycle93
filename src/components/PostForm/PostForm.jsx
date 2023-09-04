@@ -4,7 +4,7 @@ import * as forumAPI from '../../utilities/forum-api';
 
 
 
-export default function NewPostForm({ addPost }) {
+export default function PostForm(props) {
 
 	const [content, setContent] = useState({ subject: '', body: '' });
 	
@@ -15,13 +15,14 @@ export default function NewPostForm({ addPost }) {
 	async function handleSubmit(evt) {
 		evt.preventDefault(); 
 		const post = await forumAPI.post(content);
-		addPost(post);
+		props.addPost(post);
 	}
 
 
 
 	return (
-		<div>
+		<div className='PostForm'>
+
 			<div className='form-container' onSubmit={handleSubmit}>
 				<h3 style={{color: 'gray'}}>New Post</h3>
 				<form autoComplete='off'>
@@ -31,7 +32,8 @@ export default function NewPostForm({ addPost }) {
 							onChange={handleChange} required />
 
 					<label>Message</label>
-					<textarea rows={5} name='body' value={content.body} onChange={handleChange} required />
+					<textarea rows={5} name='body' value={content.body} 
+							onChange={handleChange} required />
 					
 					<button type='submit'>POST</button>
 
