@@ -1,6 +1,6 @@
 const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const create = async (req, res) => {
   try {
@@ -13,6 +13,7 @@ const create = async (req, res) => {
     // Responding with our jwt
     res.json(token);
   } catch (err) {
+	
     // Client will check for non-2xx status code
     // 400 = Bad Request
     res.status(400).json(err);
