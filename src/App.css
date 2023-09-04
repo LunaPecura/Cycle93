@@ -26,8 +26,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .App {
@@ -38,35 +37,7 @@ code {
   height: 100%;
 }
 
-.align-ctr {
-  text-align: center;
-}
 
-.align-rt {
-  text-align: right;
-}
-
-.smaller {
-  font-size: smaller;
-}
-
-.flex-ctr-ctr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.flex-j-end {
-  justify-content: flex-end;
-}
-
-.scroll-y {
-  overflow-y: scroll;
-}
 
 .section-heading {
   display: flex;
@@ -154,3 +125,14 @@ button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 }
+
+
+
+/* Little Helpers */
+.align-ctr { text-align: center; }
+.align-rt { text-align: right; }
+.smaller { font-size: smaller; }
+.flex-ctr-ctr { display: flex; justify-content: center; align-items: center; }
+.flex-col { flex-direction: column; }
+.flex-j-end { justify-content: flex-end; }
+.scroll-y { overflow-y: scroll; }
