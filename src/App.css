@@ -37,8 +37,6 @@ code {
   height: 100%;
 }
 
-
-
 .section-heading {
   display: flex;
   justify-content: space-around;
@@ -124,6 +122,14 @@ button:disabled, form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+}
+
+
+
+.NavBar {
+	display: flex;
+	/* flex-direction: column; */
+	justify-content: space-between;
 }
 
 
