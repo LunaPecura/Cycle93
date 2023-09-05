@@ -142,6 +142,8 @@ button[type="submit"] {
 	display: flex;
 	justify-content: space-between;
 	font-family: 'Trebuchet MS';
+	position: sticky;
+	top: 0;
 }
 
 

@@ -23,7 +23,7 @@ export default function PostForm({ addPost, user }) {
 
 
 	return (
-		<div className='PostForm' onClick={showForm}>
+		<div className='PostForm' onClick={showForm} >
 			<div className='form-container' onSubmit={handleSubmit}>
 
 				<h3 style={{color: 'gray'}}>New Post</h3>
