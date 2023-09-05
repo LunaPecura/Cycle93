@@ -5,13 +5,8 @@ const BASE_URL = '/api/posts';
 
 
 
-export function post(content) {
-	return sendRequest(BASE_URL, 'POST', content);
-}
-
-export function allPosts() {
-	return sendRequest(BASE_URL, 'GET');
-}
+export function post(newPost) { return sendRequest(BASE_URL, 'POST', newPost); }
+export function allPosts() { return sendRequest(BASE_URL, 'GET'); }
 
 
 

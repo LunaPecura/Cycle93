@@ -4,7 +4,10 @@ const Post = require('../../models/Post');
 
 // create new post
 const create = async (req, res) => {
-	try { res.json(await Post.create(req.body)); } 
+	try { 
+		res.json(await Post.create(req.body)); 
+	}
+	 
 	catch (err) { res.status(400).json(err); }
 };
 
