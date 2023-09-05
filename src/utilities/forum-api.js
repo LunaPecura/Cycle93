@@ -16,17 +16,11 @@ export function allPosts() {
 
 
 async function sendRequest(url, method = 'GET', payload = null) {
-	const options = { method };
+	const res = method === 'GET' ?
+				await axios.get(url) : await axios.post(url, payload);
 
-	if (payload) {
-		options.headers = { 'Content-Type': 'application/json' };
-		options.body = JSON.stringify(payload);
-	}
-
-	// const res = await fetch(url, options);
-	const res = await axios.get(url);
 	if (res.status !== 200) throw new Error('Bad Request');
-	console.log("data: ", res.data);
+	
 	return res.data;
 }
 
