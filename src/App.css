@@ -30,7 +30,7 @@ code {
 }
 
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 #root {
@@ -39,6 +39,10 @@ code {
 
 .ForumPage {
 	font-family: Georgia;
+}
+
+h1, h2, h3 {
+  text-align: center;
 }
 
 

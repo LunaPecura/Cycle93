@@ -15,7 +15,7 @@ const ForumPage = ({ user }) => {
 
 	// hand-me-down function for the post form
 	const addPost = (post) => {
-		setPosts([...posts, post]);
+		setPosts([post, ...posts]);
 	}
 
 

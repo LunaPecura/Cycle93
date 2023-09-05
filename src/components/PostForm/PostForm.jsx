@@ -7,6 +7,7 @@ import * as forumAPI from '../../utilities/forum-api';
 export default function PostForm({ addPost, user }) {
 
 	const [content, setContent] = useState({ subject: '', body: '' });
+	const form = document.querySelector('#newPostForm');
 
 	function handleChange(evt) {
 		setContent({ ...content, [evt.target.name]: evt.target.value });
@@ -15,18 +16,20 @@ export default function PostForm({ addPost, user }) {
 	async function handleSubmit(evt) {
 		evt.preventDefault(); 
 		addPost( await forumAPI.post({...content, author: user.name }) );
+		form.classList.add('hidden');
+		setContent({subject: '', body: ''})
 	}
 
 	const showForm = () => {
-		document.querySelector('#newPostForm').classList.remove('hidden');
+		form.classList.remove('hidden');
 	}
 
 
 	return (
-		<div className='PostForm' onClick={showForm} >
+		<div className='PostForm' onClick={showForm}>
 			<div className='form-container' onSubmit={handleSubmit}>
 
-				<h3 style={{color: 'gray'}}>New Post</h3>
+				<h3 style={{color: 'gray'}}>Make Request</h3>
 				<form autoComplete='off' id='newPostForm' className='hidden'>
 
 					<label>Subject</label>
@@ -37,7 +40,7 @@ export default function PostForm({ addPost, user }) {
 					<textarea rows={5} name='body' value={content.body} 
 							onChange={handleChange} required />
 					
-					<button type='submit'>POST</button>
+					<button type='submit'>SUBMIT</button>
 
 				</form>
 			</div>

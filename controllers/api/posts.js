@@ -14,7 +14,7 @@ const create = async (req, res) => {
 // get all posts
 const getAll = async (req, res) => {
 	try { 
-		const content = await Post.find({});
+		const content = await Post.find({}).sort({_id:-1});
 		res.json(content); 
 	} 
 
