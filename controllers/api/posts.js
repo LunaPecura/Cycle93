@@ -1,26 +1,22 @@
+
 const Post = require('../../models/Post');
 
+
+// create new post
 const create = async (req, res) => {
-	try {
-		const post = await Post.create(req.body); // Add post to database
-		res.json(post);
-	} catch (err) {		
-		res.status(400).json(err); // Client will check for non-2xx status code
-	}
+	try { res.json(await Post.create(req.body)); } 
+	catch (err) { res.status(400).json(err); }
 };
 
-const login = async (req, res) => {
-	try {
-		// Find the user by their email
-		const user = await User.findOne({ email: req.body.email });
-		const isMatch = await bcrypt.compare(req.body.password, user.password);
-		if (!isMatch) throw new Error();
-		res.status(200).json(createJWT(user));
-	} catch (err) {
-		res.status(400).json({ msg: err.message, reason: 'Bad Credentials' });
-	}
+// get all posts
+const getAll = async (req, res) => {
+	try { 
+		const content = await Post.find({});
+		res.json(content); 
+	} 
+
+	catch (err) { res.status(400).json(err); }
 };
 
 
-
-module.exports = {create};
+module.exports = {create, getAll};

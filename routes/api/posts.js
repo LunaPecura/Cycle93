@@ -1,27 +1,19 @@
 
-const Post = require('../../models/Post');
+const express = require('express');
+const router = express.Router();
+const postsCtrl = require('../../controllers/api/posts');
+// const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
+// create new post
+router.post('/', postsCtrl.create);
 
-const create = async (req, res) => {
-	try {
-		const post = await Post.create(req.body); // add post to database
-		res.json(post); // returning 'post' object
-	} catch (err) {		
-		res.status(400).json(err); 
-	}
-};
+// get all posts
+router.get('/', postsCtrl.getAll);
 
-// const login = async (req, res) => {
-// 	try {
-// 		// Find the user by their email
-// 		const user = await User.findOne({ email: req.body.email });
-// 		const isMatch = await bcrypt.compare(req.body.password, user.password);
-// 		if (!isMatch) throw new Error();
-// 		res.status(200).json(createJWT(user));
-// 	} catch (err) {
-// 		res.status(400).json({ msg: err.message, reason: 'Bad Credentials' });
-// 	}
-// };
+// // POST /api/users/login
+// router.post('/login', usersCtrl.login);
 
+// // GET /api/users/check-token
+// router.get('/check-token', ensureLoggedIn, usersCtrl.checkToken);
 
-module.exports = {create};
+module.exports = router;

@@ -4,7 +4,7 @@ import * as forumAPI from '../../utilities/forum-api';
 
 
 
-export default function PostForm(props) {
+export default function PostForm({ addPost }) {
 
 	const [content, setContent] = useState({ subject: '', body: '' });
 	
@@ -15,7 +15,7 @@ export default function PostForm(props) {
 	async function handleSubmit(evt) {
 		evt.preventDefault(); 
 		const post = await forumAPI.post(content);
-		props.addPost(post);
+		addPost(post);
 	}
 
 

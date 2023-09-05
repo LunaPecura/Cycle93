@@ -15,9 +15,9 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--tan-4);
@@ -36,6 +36,12 @@ code {
 #root {
   height: 100%;
 }
+
+.ForumPage {
+	font-family: Georgia;
+}
+
+
 
 .section-heading {
   display: flex;
@@ -73,6 +79,7 @@ label {
   font-size: 2vmin;
   display: flex;
   /* align-items: center; */
+  font-family: 'Trebuchet MS';
 }
 
 input, textarea {
@@ -83,7 +90,6 @@ input, textarea {
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
   outline: none;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -135,6 +141,7 @@ button[type="submit"] {
 .NavBar {
 	display: flex;
 	justify-content: space-between;
+	font-family: 'Trebuchet MS';
 }
 
 
