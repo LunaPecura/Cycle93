@@ -147,6 +147,7 @@ button[type="submit"] {
 
 
 /* Little Helpers */
+.hidden { display: none; }
 .align-ctr { text-align: center; }
 .align-rt { text-align: right; }
 .smaller { font-size: smaller; }

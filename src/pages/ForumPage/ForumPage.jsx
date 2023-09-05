@@ -9,23 +9,26 @@ const ForumPage = ({ user }) => {
 
 	// get all posts from database upon loading
 	useEffect( () => { getAllPosts() }, [] );
-	const getAllPosts = async () => {
-		setPosts(await forumAPI.allPosts());
+	const getAllPosts = async () => { 
+		setPosts(await forumAPI.allPosts()); 
 	}
 
+	// hand-me-down function for the post form
 	const addPost = (post) => {
 		setPosts([...posts, post]);
 	}
 
+
+
 	return (
 		<div className='ForumPage'>
 			<h1>ForumPage</h1>
+
 			<PostForm addPost={addPost} user={user} />
-			{ posts.length === 0 ? null : 
-				posts.map( (post, i) => {
-					return <Post subject={post.subject} body={post.body} author={post.author} key={i}/>
-				})
-			}
+
+			{/* List of all posts */}
+			{posts.map( (post, i) => <Post post={post} key={i} />)}
+	
 		</div>
 	)
 }

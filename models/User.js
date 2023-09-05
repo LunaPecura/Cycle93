@@ -1,29 +1,15 @@
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// Add the bcrypt library
 const bcrypt = require('bcryptjs');
+const SALT_ROUNDS = 6; 
 
-const SALT_ROUNDS = 6; // 6 is a reasonable value
 
 const userSchema = new Schema(
 	{
-		name: { 
-			type: String, 
-			required: true 
-		},
-		email: {
-			type: String,
-			unique: true,
-			trim: true,
-			lowercase: true,
-			required: true
-		},
-		password: {
-			type: String,
-			trim: true,
-			minLength: 3,
-			required: true
-		}
+		name: { type: String, required: true },
+		email: { type: String, unique: true, trim: true, lowercase: true, required: true },
+		password: { type: String, trim: true, minLength: 3, required: true }
 	}, 
 	{
 		timestamps: true,
