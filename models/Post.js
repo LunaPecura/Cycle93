@@ -6,7 +6,8 @@ const postSchema = new Schema(
 	{
 		subject: { type: String, required: true },
 		body: { type: String, required: true },
-		author: { type: String, required: true }
+		author: { type: String, required: true },
+		authorID: { type: String, required: true }
 	}, 
 	{
 		timestamps: true

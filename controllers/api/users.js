@@ -2,6 +2,12 @@ const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
+const find = async (req, res) => {
+	console.log("inside find()");
+	const user = await User.findOne({ _id: req.body });
+	res.json(user);
+}
+
 const create = async (req, res) => {
 	try {
 		const user = await User.create(req.body); // Add user to database
@@ -38,4 +44,4 @@ function checkToken(req, res) {
 	res.json(req.exp);
 }
 
-module.exports = {create, login, checkToken};
+module.exports = {find, create, login, checkToken};

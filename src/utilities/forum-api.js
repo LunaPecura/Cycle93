@@ -10,6 +10,8 @@ export function allPosts() { return sendRequest(BASE_URL, 'GET'); }
 
 
 
+
+
 async function sendRequest(url, method = 'GET', payload = null) {
 	const res = method === 'GET' ?
 				await axios.get(url) : await axios.post(url, payload);

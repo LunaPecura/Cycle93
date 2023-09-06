@@ -27,7 +27,7 @@ const ForumPage = ({ user }) => {
 			<PostForm addPost={addPost} user={user} />
 
 			{/* List of all posts */}
-			{posts.map( (post, i) => <Post post={post} key={i} />)}
+			{posts.map( (post, i) => <Post post={post} user={user} key={i} />)}
 	
 		</div>
 	)

@@ -27,8 +27,6 @@ function App() {
 				<>
 					<NavBar user={user} setUser={setUser} />
 					<Routes>
-						{/* <Route path='/orders/new' element={<NewOrderPage />} />
-						<Route path='/orders' element={<OrderHistoryPage />} /> */}
 						<Route path='/forum' element={<ForumPage user={user} />} />
 						<Route path='/curriculum' element={<CurriculumPage />} />
 						<Route path='/resources' element={<ResourcesPage />} />

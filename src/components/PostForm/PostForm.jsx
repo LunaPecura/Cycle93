@@ -9,15 +9,20 @@ export default function PostForm({ addPost, user }) {
 	const [content, setContent] = useState({ subject: '', body: '' });
 	const form = document.querySelector('#newPostForm');
 
+
 	function handleChange(evt) {
 		setContent({ ...content, [evt.target.name]: evt.target.value });
 	}
 
 	async function handleSubmit(evt) {
 		evt.preventDefault(); 
-		addPost( await forumAPI.post({...content, author: user.name }) );
+
+		const author = user.name;
+		const authorID = user._id.toString();
+		
 		form.classList.add('hidden');
-		setContent({subject: '', body: ''})
+		addPost( await forumAPI.post({ ...content, author: author, authorID: authorID }) );
+		setContent({subject: '', body: ''});
 	}
 
 	const showForm = () => {
@@ -37,7 +42,7 @@ export default function PostForm({ addPost, user }) {
 							onChange={handleChange} required />
 
 					<label>Message</label>
-					<textarea rows={5} name='body' value={content.body} 
+					<textarea rows={3} name='body' value={content.body} 
 							onChange={handleChange} required />
 					
 					<button type='submit'>SUBMIT</button>

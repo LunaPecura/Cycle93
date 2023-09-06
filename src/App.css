@@ -45,6 +45,9 @@ h1, h2, h3 {
   text-align: center;
 }
 
+.editable {
+	border-color: var(--orange);
+}
 
 
 .section-heading {
