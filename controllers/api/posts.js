@@ -24,10 +24,7 @@ const getAll = async (req, res) => {
 // delete post
 const remove = async (req, res) => {
 	try { 
-		console.log("inside remove()");
-		const id = req.params.id.substr(1);
-		console.log(id);
-		res.json(await Post.deleteOne({_id: id})); 
+		res.json(await Post.deleteOne({_id: req.params.id.substr(1)})); 
 	}
 	
 	catch (err) { res.status(400).json(err); }

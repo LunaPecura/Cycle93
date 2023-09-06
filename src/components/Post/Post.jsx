@@ -4,12 +4,13 @@ import React, { useState } from 'react'
 import * as forumAPI from '../../utilities/forum-api'
 
 
-const Post = ({ post, user }) => {
+const Post = ({ post, user, flagForDelete }) => {
 
 	const [borderColor, setBorderColor] = useState('darkgray');
 	const userMatchAuthor = user._id.localeCompare(post.authorID) === 0;
 	const style = {border: '1px solid darkgray', margin: '5px 0px', padding: '10px',
 					borderRadius: '5px', borderColor: borderColor};
+	
 	
 	
 	const onHover = () => {
@@ -24,9 +25,10 @@ const Post = ({ post, user }) => {
 		}
 	}
 
-	const deletePost = () => {
+	const deletePost = async () => {
 		if(userMatchAuthor) {
-			forumAPI.deletePost(post._id.toString())
+			await forumAPI.deletePost(post._id.toString());
+			flagForDelete();
 		}
 	}
 
