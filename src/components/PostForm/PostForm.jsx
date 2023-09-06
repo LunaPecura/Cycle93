@@ -21,7 +21,9 @@ export default function PostForm({ addPost, user }) {
 		const authorID = user._id.toString();
 		
 		form.classList.add('hidden');
-		addPost( await forumAPI.post({ ...content, author: author, authorID: authorID }) );
+		addPost( await forumAPI.post({ ...content, 
+										author: author, authorID: authorID, 
+										tags: [ "tag1", "tag2", "tag3" ] }) );
 		setContent({subject: '', body: ''});
 	}
 

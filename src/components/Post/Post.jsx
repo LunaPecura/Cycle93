@@ -32,24 +32,31 @@ const Post = ({ post, user, flagForDelete }) => {
 		}
 	}
 
+	const tag = () => {
+		
+	}
+
 	return ( 
 		<div className='Post' id={`${post._id.toString()}`}
 				style={style} onMouseOver={onHover} onMouseLeave={offHover}>
 
 			<p> 
 				Author: {post.author} &nbsp; | &nbsp;
-				Subject: {post.subject} &nbsp; | &nbsp;
-				ID: {post.authorID}
+				Subject: {post.subject} {/* &nbsp; | &nbsp; */}
+				{/* ID: {post.authorID} */}
 			</p>
 
-			<p>{post.body}</p>
+			<p>Body: {post.body}</p>
+			<p>Tags: {post.tags}</p>
 
 			
 				{
 					userMatchAuthor ? 
 					<button onClick={deletePost}>Delete</button>
 					: 
-					<></>
+					<>
+						<button onClick={tag}>Tag</button>
+					</>
 				}
 			
 			
