@@ -10,6 +10,9 @@ router.post('/', postsCtrl.create);
 // get all posts
 router.get('/', postsCtrl.getAll);
 
+// delete post
+router.delete('/:id', postsCtrl.remove);
+
 // // POST /api/users/login
 // router.post('/login', usersCtrl.login);
 

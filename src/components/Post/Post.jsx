@@ -1,34 +1,37 @@
 
 import '../../App.css';
 import React, { useState } from 'react'
+import * as forumAPI from '../../utilities/forum-api'
 
 
 const Post = ({ post, user }) => {
 
 	const [borderColor, setBorderColor] = useState('darkgray');
+	const userMatchAuthor = user._id.localeCompare(post.authorID) === 0;
 	const style = {border: '1px solid darkgray', margin: '5px 0px', padding: '10px',
 					borderRadius: '5px', borderColor: borderColor};
-
-	// helper function
-	const userMatchAuthor = () => {
-		return user._id.localeCompare(post.authorID) === 0 
-	}
-
+	
 	
 	const onHover = () => {
-		if(userMatchAuthor()) { 
+		if(userMatchAuthor) { 
 			setBorderColor('#F67F00');
 		}
 	}
 
 	const offHover = () => { 
-		if(userMatchAuthor()) { 
+		if(userMatchAuthor) { 
 			setBorderColor('darkgray');
 		}
 	}
 
+	const deletePost = () => {
+		if(userMatchAuthor) {
+			forumAPI.deletePost(post._id.toString())
+		}
+	}
+
 	return ( 
-		<div className='Post editable' id={`${post._id.toString()}`}
+		<div className='Post' id={`${post._id.toString()}`}
 				style={style} onMouseOver={onHover} onMouseLeave={offHover}>
 
 			<p> 
@@ -38,6 +41,16 @@ const Post = ({ post, user }) => {
 			</p>
 
 			<p>{post.body}</p>
+
+			
+				{
+					userMatchAuthor ? 
+					<button onClick={deletePost}>Delete</button>
+					: 
+					<></>
+				}
+			
+			
 		</div>
 	)
 }
