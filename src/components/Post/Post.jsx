@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import * as forumAPI from '../../utilities/forum-api'
 
 
-const Post = ({ post, user, flagForDelete }) => {
+const Post = ({ post, user, flag }) => {
 
 	const [borderColor, setBorderColor] = useState('darkgray');
 	const userMatchAuthor = user._id.localeCompare(post.authorID) === 0;
@@ -26,14 +26,17 @@ const Post = ({ post, user, flagForDelete }) => {
 	}
 
 	const deletePost = async () => {
-		if(userMatchAuthor) {
-			await forumAPI.deletePost(post._id.toString());
-			flagForDelete();
-		}
+		await forumAPI.deletePost(post._id.toString());
+		flag();
 	}
 
-	const tag = () => {
-		
+	const tag = async () => {
+		const newTag = `${user.name} tagged this. `
+		const newPost = {...post};
+		newPost.tags = [...post.tags, newTag];
+		console.log(newPost);
+		await forumAPI.editPost(post._id.toString(), newPost);
+		flag();
 	}
 
 	return ( 

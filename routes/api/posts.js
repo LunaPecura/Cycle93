@@ -13,6 +13,9 @@ router.get('/', postsCtrl.getAll);
 // delete post
 router.delete('/:id', postsCtrl.remove);
 
+// edit post
+router.put('/:id', postsCtrl.edit);
+
 // // POST /api/users/login
 // router.post('/login', usersCtrl.login);
 

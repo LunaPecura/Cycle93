@@ -19,9 +19,7 @@ const ForumPage = ({ user }) => {
 		setPosts([post, ...posts]);
 	}
 
-	const flagForDelete = () => {
-		setTrigger(!trigger);
-	}
+	const flag = () => { setTrigger(!trigger); }
 
 
 
@@ -32,7 +30,7 @@ const ForumPage = ({ user }) => {
 			<PostForm addPost={addPost} user={user} />
 
 			{/* List of all posts */}
-			{posts.map( (post, i) => <Post post={post} user={user} flagForDelete={flagForDelete} key={i} />)}
+			{posts.map( (post, i) => <Post post={post} user={user} flag={flag} key={i} />)}
 	
 		</div>
 	)
