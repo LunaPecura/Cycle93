@@ -6,10 +6,10 @@ import * as forumAPI from '../../utilities/forum-api'
 
 const Post = ({ post, user, flag }) => {
 
-	const [borderColor, setBorderColor] = useState('darkgray');
+	const [borderColor, setBorderColor] = useState('#968c84');
 	const userMatchAuthor = user._id.localeCompare(post.authorID) === 0;
-	const style = {border: '1px solid darkgray', margin: '5px 0px', padding: '10px',
-					borderRadius: '5px', borderColor: borderColor};
+	const style = { border: '1px solid #968c84', margin: '5px 0px', padding: '10px',
+					borderRadius: '5px', borderColor: borderColor };
 	
 	
 	
@@ -21,7 +21,7 @@ const Post = ({ post, user, flag }) => {
 
 	const offHover = () => { 
 		if(userMatchAuthor) { 
-			setBorderColor('darkgray');
+			setBorderColor('#968c84');
 		}
 	}
 
@@ -40,13 +40,12 @@ const Post = ({ post, user, flag }) => {
 	}
 
 	return ( 
-		<div className='Post' id={`${post._id.toString()}`}
-				style={style} onMouseOver={onHover} onMouseLeave={offHover}>
+		<div className='Post' id={`${post._id.toString()}`} style={style}
+				onMouseOver={onHover} onMouseLeave={offHover}>
 
 			<p> 
 				Author: {post.author} &nbsp; | &nbsp;
 				Subject: {post.subject} {/* &nbsp; | &nbsp; */}
-				{/* ID: {post.authorID} */}
 			</p>
 
 			<p>Body: {post.body}</p>
@@ -58,7 +57,11 @@ const Post = ({ post, user, flag }) => {
 					<button onClick={deletePost}>Delete</button>
 					: 
 					<>
-						<button onClick={tag}>Tag</button>
+						<button className='tagButton' onClick={tag}>Tag</button>
+						<button className='tagButton' onClick={ ()=>{} }>Tag1</button>
+						<button className='tagButton' onClick={ ()=>{} }>Tag2</button>
+						<button className='tagButton' onClick={ ()=>{} }>Tag3</button>
+						<button className='tagButton' onClick={ ()=>{} }>Tag4</button>
 					</>
 				}
 			

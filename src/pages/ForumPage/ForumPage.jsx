@@ -25,7 +25,7 @@ const ForumPage = ({ user }) => {
 
 	return (
 		<div className='ForumPage'>
-			<h1>ForumPage</h1>
+			<h1>Forum</h1>
 
 			<PostForm addPost={addPost} user={user} />
 
