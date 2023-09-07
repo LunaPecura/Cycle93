@@ -42,7 +42,7 @@ Identify future features and enhancements planned for the project. <br />
 You will have 7 minutes to present and demonstrate the following: <br />
 -- Introduce your project by paraphrasing its README. <br />
 -- Click the link in the README to open the deployed app. <br />
--- Demonstrate the application's authentication features by signing up a new user, logging out that user, then logging in with your preferred user.  <br />
+-- Demonstrate authentication features by signing up a new user, logging out that user, then logging in with your preferred user.  <br />
 -- Demonstrate your app's main features. <br />
 
 Share/discuss the following code (not line-by-line): <br />
