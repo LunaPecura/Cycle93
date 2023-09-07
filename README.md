@@ -1,16 +1,14 @@
 # Cycle93
 
-The project must include a README.mdfile with the following sections: <br />
 
 ## Introduction: 
 
-A paragraph used to introduce interested parties to the project and needs to include one or more screenshots. <br />
+Cycle93 will be a virtual community center for the graduates of the 93rd iteration of Per Scholas' Software Engineering RTT program. Users can post requests for help with coding related issues, offer classes on their expert topics, and share resources. Users will be able to react to all posts and resources with predefined tags, and the tags will provide the basis for sorting and search functionality.
 
 
 
 ## Technologies Used: 
 
-A list of all technologies, libraries, APIs, etc. used in the project. <br />
 -- MongoDB/Mongoose <br />
 -- Express <br />
 -- React <br />
@@ -20,14 +18,17 @@ A list of all technologies, libraries, APIs, etc. used in the project. <br />
 
 ## Getting Started: 
 
-Links to the project's planning (Trello board) and the deployed app. <br />
+Link to the deployed app (DB connection not working yet) <br />
 <a href="https://cycle93.onrender.com">https://cycle93.onrender.com</a> <br />
 
 
 
 ## Unsolved Problems: 
 
-List any unsolved issues. <br />
+
+-- fix db connection on deployment site <br />
+-- create a system for tags to make them 'interlinkable' <br />
+-- fill with 'taggable' content <br />
 
 
 
