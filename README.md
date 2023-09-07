@@ -7,10 +7,10 @@ A paragraph used to introduce interested parties to the project and needs to inc
 
 ## Technologies Used: 
 A list of all technologies, libraries, APIs, etc. used in the project.
-MongoDB/Mongoose
-Express
-React
-Node
+-- MongoDB/Mongoose
+-- Express
+-- React
+-- Node
 
 ## Getting Started: 
 Links to the project's planning (Trello board) and the deployed app.
