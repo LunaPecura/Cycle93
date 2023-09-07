@@ -6,9 +6,9 @@ import * as forumAPI from '../../utilities/forum-api'
 
 const Post = ({ post, user, flag }) => {
 
-	const [borderColor, setBorderColor] = useState('#968c84');
+	const [borderColor, setBorderColor] = useState('#D3C1AE');
 	const userMatchAuthor = user._id.localeCompare(post.authorID) === 0;
-	const style = { border: '1px solid #968c84', margin: '5px 0px', padding: '10px',
+	const style = { border: '1px solid #D3C1AE', margin: '25px', padding: '10px',
 					borderRadius: '5px', borderColor: borderColor };
 	
 	
@@ -21,7 +21,7 @@ const Post = ({ post, user, flag }) => {
 
 	const offHover = () => { 
 		if(userMatchAuthor) { 
-			setBorderColor('#968c84');
+			setBorderColor('#D3C1AE');
 		}
 	}
 

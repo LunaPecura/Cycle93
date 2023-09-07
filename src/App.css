@@ -10,7 +10,7 @@
 	--text-dark: #615954;
 }
 
-#root { height: 100%; }
+/* #root { height: 100%; } */
 
 *, *:before, *:after { box-sizing: border-box; }
 
@@ -62,8 +62,8 @@ a { color: indigo; }
 /* FORMS ------------------------------------------------------ */
 
 .form-container {
-	background-color: var(--tan-1);
-	border: .1vmin solid var(--tan-3);
+	background-color: var(--tan-2);
+	border: .1vmin solid var(--tan-4);
 	padding: 3vmin;
 	border-radius: 1vmin;
 }
@@ -82,6 +82,7 @@ label {
 }
 
 input, textarea {
+	background-color: var(--tan-1);
 	color: var(--text-light);
 	border: .1vmin solid var(--tan-3);
 	font-family: 'Trebuchet MS';
