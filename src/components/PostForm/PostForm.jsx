@@ -23,7 +23,7 @@ export default function PostForm({ addPost, user }) {
 		form.classList.add('hidden');
 		addPost( await forumAPI.post({ ...content, 
 										author: author, authorID: authorID, 
-										tags: [ "tag1", "tag2", "tag3" ] }) );
+										tags: [  ] }) );
 		setContent({subject: '', body: ''});
 	}
 
